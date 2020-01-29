@@ -13,3 +13,6 @@ Scripts to setup various themes. Customized for me.
 
 ### images
 Various images I like to use. Most likely referenced by themes and other desktop tweaks.
+
+### shell-files
+Scripts, aliases, etc. that I use to augment my shell.
