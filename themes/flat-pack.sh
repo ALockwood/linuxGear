@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 #Thanks to @dani_ruiz24, https://drasite.com/flat-remix for all of this!
 # 
 #Make sure to install Gnome tweak tools and enable user themes before running.
@@ -29,6 +30,7 @@ THEME_GIT_DIR="${HOME}/.themeData"
 ICON_DIR="icon"
 THEME_DIR="theme"
 SHELL_DIR="shell"
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
 function clone_or_pull() {
     echo "Pulling/cloning for $1..."
@@ -80,8 +82,7 @@ gsettings set org.gnome.shell.extensions.user-theme name ${SHELL_THEME}
 gsettings set org.gnome.desktop.interface gtk-theme ${APP_THEME}
 echo "~={ Theme operations complete }=~"
 
-ln -sf "$HOME/src/linuxGear/images/${LOCK_SCREEN_IMG}" $THEME_GIT_DIR/$THEME_DIR/lockscreen.jpeg 
+ln -sf "${SCRIPT_DIR}/images/${LOCK_SCREEN_IMG}" $THEME_GIT_DIR/$THEME_DIR/lockscreen.jpeg 
 gsettings set org.gnome.desktop.screensaver picture-uri "file://$THEME_GIT_DIR/$THEME_DIR/lockscreen.jpeg"
 echo "~={ Lock screen operations complete }=~"
-
 
