@@ -7,6 +7,7 @@ function ErrorMessage() {
 #End Misc Helpers
 
 #GitStatus
+#Note: Overrides "gs" for Ghostscript
 function gs() {
     git status
 }
