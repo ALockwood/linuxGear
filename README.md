@@ -16,3 +16,6 @@ Various images I like to use. Most likely referenced by themes and other desktop
 
 ### shell-files
 Scripts, aliases, etc. that I use to augment my shell.
+
+### scripts
+Exactly what you think.
