@@ -9,10 +9,7 @@ If you're not me I don't know how much use you'll get from anything here, but it
 
 # Directory Structure
 ### themes
-Scripts to setup various themes. Customized for me.
-
-### images
-Various images I like to use. Most likely referenced by themes and other desktop tweaks.
+Scripts and things to setup various themes. Customized for me.
 
 ### shell-files
 Scripts, aliases, etc. that I use to augment my shell.
