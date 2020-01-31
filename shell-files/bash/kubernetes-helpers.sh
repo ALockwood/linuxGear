@@ -1,8 +1,6 @@
 #!/bin/bash
+#Functions and aliases to speed up routine kubernetes operations
 
-##
-# KUBERNETES
-##
 function GetPodLogs() {
     if [ -z "$1" ]; then
         echo "Please supply a pod name."
