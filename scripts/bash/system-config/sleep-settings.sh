@@ -58,9 +58,11 @@ SLEEP=$(cat /sys/power/mem_sleep | sed 's/.*\[\([a-zA-Z0-9_]*\)\].*/\1/')
 echo -e "Current mem_sleep setting: ${colours[green]}${SLEEP}${NC}"
 
 SWAP_SETTINGS=$(swapon --show)
+HAS_SWAPFILE=1
 # Check if the system is using a swap file or swap partition. If neither; bail
 if checkpart=$(echo "${SWAP_SETTINGS}" | grep partition); then
     eEcho "System is configured with a swap partition." green
+    $HAS_SWAPFILE=0
 else
     if checkswapf=$(echo "${SWAP_SETTINGS}" | grep swapfile); then
         eEcho "System is configured with a swapfile." yellow
@@ -70,3 +72,5 @@ else
     fi
 fi
 
+#TODO
+echo "$HAS_SWAPFILE"
