@@ -1,0 +1,70 @@
+{
+    "telemetry.enableCrashReporter": false,
+    "telemetry.enableTelemetry": false,
+    "workbench.startupEditor": "newUntitledFile",
+    "explorer.confirmDragAndDrop": false,
+    "files.watcherExclude": {
+        "**/.tmp/**": true
+    },
+    "editor.renderWhitespace": "boundary",
+    "git.confirmSync": false,
+    "terraform.indexing": {
+        "enabled": false,
+        "liveIndexing": false,
+        "delay": 500,
+        "exclude": [
+            ".terraform/**/*",
+            "**/.terraform/**/*"
+        ]
+    },
+    "terraform.languageServer": {
+        "enabled": true,
+        "args": []
+    },
+    "gitlens.views.repositories.location": "scm",
+    "gitlens.views.lineHistory.location": "explorer",
+    "gitlens.views.compare.location": "gitlens",
+    "gitlens.views.search.location": "gitlens",
+    "workbench.iconTheme": "eq-material-theme-icons-darker",
+    "vsicons.dontShowNewVersionMessage": true,
+    "go.useLanguageServer": true,
+    "workbench.colorCustomizations": {
+        "activityBarBadge.background": "#64FFDA",
+        "activityBar.activeBorder": "#64FFDA",
+        "list.activeSelectionForeground": "#64FFDA",
+        "list.inactiveSelectionForeground": "#64FFDA",
+        "list.highlightForeground": "#64FFDA",
+        "scrollbarSlider.activeBackground": "#64FFDA50",
+        "editorSuggestWidget.highlightForeground": "#64FFDA",
+        "textLink.foreground": "#64FFDA",
+        "progressBar.background": "#64FFDA",
+        "pickerGroup.foreground": "#64FFDA",
+        "tab.activeBorder": "#64FFDA",
+        "notificationLink.foreground": "#64FFDA",
+        "editorWidget.resizeBorder": "#64FFDA",
+        "editorWidget.border": "#64FFDA",
+        "settings.modifiedItemIndicator": "#64FFDA",
+        "settings.headerForeground": "#64FFDA",
+        "panelTitle.activeBorder": "#64FFDA",
+        "breadcrumb.activeSelectionForeground": "#64FFDA",
+        "menu.selectionForeground": "#64FFDA",
+        "menubar.selectionForeground": "#64FFDA",
+        "editor.findMatchBorder": "#64FFDA",
+        "selection.background": "#64FFDA40"
+    },
+    "materialTheme.accent": "Bright Teal",
+    "workbench.colorTheme": "Material Theme Darker High Contrast",
+    // Controls the font family.
+    "editor.fontFamily": "JetBrains Mono",
+    // Controls the line height. Use 0 to compute the lineHeight from the fontSize.
+    "editor.lineHeight": 0,
+    // Enables font ligatures
+    "editor.fontLigatures": true,
+    // Controls if file decorations should use badges.
+    "explorer.decorations.badges": false,
+    "editor.fontSize": 14,
+    "editor.letterSpacing": 0.4,
+    // Enable smooth scrolling in the editor
+    "editor.smoothScrolling": true,
+    "files.autoSave": "off"
+}

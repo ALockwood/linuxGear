@@ -16,3 +16,6 @@ Scripts, aliases, etc. that I use to augment my shell.
 
 ### scripts
 Exactly what you think.
+
+### configs
+Configurations and things related to maintaining app configurations.

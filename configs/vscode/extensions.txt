@@ -1,0 +1,12 @@
+#Current list of extensions w/ install command
+
+ext install ms-vscode.csharp
+ext install GitHub.vscode-pull-request-github
+ext install eamodio.gitlens
+ext install ms-vscode.Go
+ext install mauve.terraform
+ext install Equinusocio.vsc-material-theme
+#Installs the next two automatically...
+#ext install Equinusocio.vsc-community-material-theme
+#ext install Equinusocio.vsc-material-theme-icons
+
