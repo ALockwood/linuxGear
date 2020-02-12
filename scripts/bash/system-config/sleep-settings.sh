@@ -62,7 +62,7 @@ HAS_SWAPFILE=1
 # Check if the system is using a swap file or swap partition. If neither; bail
 if checkpart=$(echo "${SWAP_SETTINGS}" | grep partition); then
     eEcho "System is configured with a swap partition." green
-    $HAS_SWAPFILE=0
+    HAS_SWAPFILE=0
 else
     if checkswapf=$(echo "${SWAP_SETTINGS}" | grep swapfile); then
         eEcho "System is configured with a swapfile." yellow
@@ -72,5 +72,8 @@ else
     fi
 fi
 
-#TODO
+# TODO:
+# - check for /etc/systemd/sleep.conf, create and add if not there. If there... print and bail??
+#   - add resume= to grub
+# - print instructions for swap file setup?
 echo "$HAS_SWAPFILE"
