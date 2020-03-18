@@ -26,7 +26,8 @@ function GetDeploymentImages() {
     kubectl get deployment ${1} -o json | jq .spec.template.spec.containers[].image -r
 }
 
-alias get-pods="kubectl get pods -o wide --sort-by=""{.spec.nodeName}"" "
+alias get-pods="kubectl get pods --sort-by=""{.metadata.name}"" "
+alias get-widepods="kubectl get pods -o wide --sort-by=""{.spec.nodeName}"" "
 alias get-logs="GetPodLogs "
 alias get-jobs="kubectl get jobs "
 alias get-nodes="kubectl get nodes "
