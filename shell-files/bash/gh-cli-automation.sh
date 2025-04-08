@@ -36,7 +36,7 @@ function make-pr() {
 function is_branch_clean() {
   # Check if the current branch is tracking a remote branch
   tracking_info=$(git status -b 2> /dev/null)
-  if [[ ! "$tracking_info" =~ "Your branch is up to date with" ]] && [[ ! "$tracking_info" =~ "Your branch is ahead of" ]]; then
+  if [[ ! "$tracking_info" =~ "Your branch is up to date with" ]]; then
     echo "💥 Not tracking a remote branch or behind. Fix this before making a PR."
     return 1
   fi
