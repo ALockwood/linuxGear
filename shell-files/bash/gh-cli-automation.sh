@@ -25,6 +25,11 @@ function make-pr() {
     return 1
   fi
 
+  if [ "$current_branch" == "$GH_DEFAULT_BRANCH" ]; then
+    echo "💥 You are on the default branch (${GH_DEFAULT_BRANCH}). Please switch to a feature branch before creating a PR."
+    return 1
+  fi
+
   if is_branch_clean; then
     echo "👍 Current branch is clean, attempting to create PR..."
     # --body doesn't accept multiline input, so we use a workaround
