@@ -27,9 +27,9 @@ function make-pr() {
     return 1
   fi
 
-  if  is_branch_clean; then
+  if is_branch_clean; then
     echo "👍 Current branch is clean, attempting to create PR..."
-    #gh pr create --base "${GH_DEFAULT_BRANCH}" --title "${title}" --body "\n\n${current_branch}" --web  
+    gh pr create --base "${GH_DEFAULT_BRANCH}" --title "${title}" --body "\n\n${current_branch}" --web  
   fi
 }
 
@@ -47,15 +47,16 @@ function is_branch_clean() {
   if [ -n "$untracked_files" ]; then
     echo "Untracked files present:"
     echo "$untracked_files"
-    echo "Please add or remove these files before making a PR."
+    echo "💥 Please add or remove these files before making a PR."
     return 1
   fi
 
   # Check if there are any uncommitted changes (ahead is acceptable)
-  dirty_index=$(git status --porcelain | grep "^M\|^A\|^D\|^R\|^C")
+  dirty_index=$(git status --porcelain | grep "^M\|^A\|^D\|^R\|^C\|^ M\|^AM\|^RM\|^CM")
   if [ -n "$dirty_index" ]; then
     echo "Uncommitted changes present:"
     echo "$dirty_index"
+    echo "💥 Please commit or stash these changes before making a PR."
     return 1
   fi
 
