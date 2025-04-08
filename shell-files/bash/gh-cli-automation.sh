@@ -1,13 +1,11 @@
 #!/bin/bash
-set -e
-
 # A collection of functions to automate GitHub CLI tasks
 
-# CONSTANTS
-GH_DEFAULT_BRANCH="main" # Default branch for pull requests
 
 # Make a PR from the local branch to the value defined in $GH_DEFAULT_BRANCH
 function make-pr() {
+  local GH_DEFAULT_BRANCH="main" # Default branch for pull requests
+  
   local title="$1"
   if [ -z "$title" ]; then
     echo "🤔 Are you SURE you want the title to be empty?"
@@ -63,4 +61,3 @@ function is_branch_clean() {
   # If all checks pass
   return 0
 }
-
