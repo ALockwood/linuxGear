@@ -27,7 +27,8 @@ function make-pr() {
 
   if is_branch_clean; then
     echo "👍 Current branch is clean, attempting to create PR..."
-    gh pr create --base "${GH_DEFAULT_BRANCH}" --title "${title}" --body "\n\n${current_branch}" --web  
+    # --body doesn't accept multiline input, so we use a workaround
+    echo "\n\n${current_branch}" | gh pr create --base "${GH_DEFAULT_BRANCH}" --title "${title}" --web  -
   fi
 }
 
