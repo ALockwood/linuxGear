@@ -26,7 +26,7 @@ function pr-make() {
       echo "🤔 No title provided -- Did you forget?"
       read -p "Provide a PR title now, or, press ENTER for a default: " usr_title
       if [ -z "$usr_title" ]; then
-        title="[{$current_branch}] A Sad Default PR Title"
+        title="[${current_branch}] A Sad Default PR Title"
       else
         title="$usr_title"
       fi
