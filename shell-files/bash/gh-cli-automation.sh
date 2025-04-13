@@ -3,21 +3,10 @@
 
 
 # Make a PR from the local branch to the value defined in $GH_DEFAULT_BRANCH
-function make-pr() {
+function pr-make() {
   local GH_DEFAULT_BRANCH="main" # Default branch for pull requests
-  
   local title="$1"
-  if [ -z "$title" ]; then
-    echo "🤔 Are you SURE you want the title to be empty?"
-    read -p "You can enter a title now, or press ENTER to continue with a shameful default: " usr_title
-    if [ -z "$usr_title" ]; then
-      title="Shame Me: I was Too Lazy to Enter a Title"
-    else
-      title="$usr_title"
-    fi
-  fi
-  echo ""
-
+  
   current_branch=$(git rev-parse --abbrev-ref HEAD)
   if [ -z "$current_branch" ]; then
     echo "😱 No current branch found?!"
@@ -31,7 +20,19 @@ function make-pr() {
   fi
 
   if is_branch_clean; then
-    echo "👍 Current branch is clean, attempting to create PR..."
+    echo "👍 Current branch is clean, proceeding with PR create..."
+
+    if [ -z "$title" ]; then
+      echo "🤔 No title provided -- Did you forget?"
+      read -p "Provide a PR title now, or, press ENTER for a default: " usr_title
+      if [ -z "$usr_title" ]; then
+        title="[{$current_branch}] A Sad Default PR Title"
+      else
+        title="$usr_title"
+      fi
+    fi
+    echo ""
+
     # --body doesn't accept multiline input, so we use a workaround
     echo -e "\n\n${current_branch}\n" | gh pr create --base "${GH_DEFAULT_BRANCH}" --title "${title}" --web  --body-file - 
   fi
